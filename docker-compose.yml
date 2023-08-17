@@ -7,7 +7,7 @@ services:
       - node.name=opensearch-stack-1
       - cluster.initial_master_nodes=opensearch-stack-1
     networks:
-      - opensearch-stack
+      - stack
     ports:
       - "9201:9200"
 
@@ -16,9 +16,9 @@ services:
     environment:
       - OPENSEARCH_HOSTS=https://search:9200
     networks:
-      - opensearch-stack
+      - stack
     ports:
       - "5602:5601"
 
 networks:
-  opensearch-stack:
+  stack:
